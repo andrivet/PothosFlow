@@ -66,13 +66,13 @@ void LoggerDisplay::handleLogMessage(const Poco::Message &msg)
     QString color;
     switch (msg.getPriority())
     {
-    case Poco::Message::PRIO_INFORMATION: color = "black"; break;
+    case Poco::Message::PRIO_INFORMATION: color = "gray"; break;
     case Poco::Message::PRIO_NOTICE: color = "green"; break;
     case Poco::Message::PRIO_WARNING: color = "orange"; break;
     case Poco::Message::PRIO_ERROR: color = "red"; break;
     case Poco::Message::PRIO_CRITICAL: color = "red"; break;
     case Poco::Message::PRIO_FATAL: color = "red"; break;
-    default: color = "black";
+    default: color = "gray";
     }
 
     QString sep(":");
@@ -82,7 +82,7 @@ void LoggerDisplay::handleLogMessage(const Poco::Message &msg)
     if (body.count("\n") > 1)
     {
         sep = " &rArr;";
-        body = "<pre style='background-color:#eaecee;'>"+body+"</pre><br />";
+        body = "<pre style='background-color:#70808f;'>"+body+"</pre><br />";
     }
 
     auto line = QString("<font color=\"%1\"><b>[%2] %3%4</b></font> %5").arg(
